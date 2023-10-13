@@ -20,7 +20,7 @@ public class UserController {
     @PostMapping("/")
     public ResponseEntity create(@RequestBody UserModel usermodel){
         var user = this.userRepository.findByUsername(usermodel.getUsername());
-
+        
         if(user != null){
             System.out.println("Já existe este usuário cadastrado.");
             // Mensagem de erro
